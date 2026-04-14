@@ -1,0 +1,12 @@
+label {
+    font-weight: 700;
+    font-size: larger;
+}
+
+form {
+    padding: 4px 8px 8px 4px;
+}
+
+.puzzle-stats{
+    width: 192px;
+}

@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "Pieced",
+    "version": "1.0",
+    "icons":{
+        "32": "logo/logo_32.png",
+        "64": "logo/logo_64.png",
+        "128": "logo/logo_128.png"
+    },
+    "description": "Turns Images into sliding puzzles",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "storage",
+        "tabs"
+    ],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "logo/logo_64.png"
+    },
+  "content_scripts": [
+    {
+      "js": ["party.js", "content.js"],
+      "matches": [
+        "<all_urls>"
+      ],
+      "css":[
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+
+    }
+  ]
+}
