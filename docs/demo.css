@@ -1,1 +1,164 @@
+body {
 
+    font-family: "DM Sans", sans-serif;
+    background-color: rgb(255, 248, 236);
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid ghostwhite;
+    background-color: white;
+    align-items: center;
+    padding: 8px 64px 8px 64px;
+
+
+}
+
+.main {
+    background-color: rgb(255, 248, 236);
+}
+
+.left>span {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.logo {
+    margin: auto;
+    width: 32px;
+    height: 32px
+}
+
+
+.download-button {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(238, 129, 5);
+    padding: 8px 24px;
+    border-radius: 8px;
+    box-shadow: 4px 2px rgb(201, 201, 201);
+}
+
+.download-button:active {
+    box-shadow: none
+}
+
+
+.main {
+    display: flex;
+    padding: 4em 1em 2em 0em;
+
+}
+
+.large-text {
+    font-size: 4em;
+}
+
+.orange-text {
+    color: rgb(238, 129, 5);
+}
+
+
+.main-left {
+    padding-right: 1em;
+    margin-left: 4em;
+
+}
+
+
+.main-image {
+    max-width: 90%;
+
+    box-shadow: 4px 2px rgb(201, 201, 201);
+    padding-top: 1em;
+}
+
+.main-title {
+    line-height: 1.1;
+}
+
+
+.main-image-container {
+    background-color: white;
+    margin-top: 1.5em;
+    padding: 1em;
+    box-shadow: 2px 2px rgb(201, 201, 201);
+    text-align: center;
+
+}
+
+.main-subtitle {
+    padding-top: 8px;
+    font-size: 18px;
+}
+
+
+.video-demo-container {
+    margin: 4em 2em 4em 2em;
+    padding: 1em;
+    padding-bottom: 2em;
+    text-align: center;
+    background-color: white;
+    box-shadow: 4px 4px 4px rgb(201, 201, 201);
+
+}
+
+.video-demo-link {
+    width: 80vw;
+    height: 80vh;
+}
+
+.video-demo-title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.cta-container {
+    background-color: white;
+    margin: 8em 2em 4em 2em;
+    padding: 1em;
+    padding-bottom: 4em;
+    text-align: center;
+    box-shadow: 4px 4px 4px rgb(201, 201, 201);
+}
+
+.cta-text {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.cta-button {
+    font-size: 1.25rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid ghostwhite;
+    background-color: white;
+    align-items: center;
+    padding: 8px 128px 8px 128px;
+
+}
+
+.footer {
+    text-decoration: none;
+    color: black;
+    padding: 4em;
+    font-weight: bold;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+}
+
+.footer-brand-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}

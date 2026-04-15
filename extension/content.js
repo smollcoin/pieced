@@ -3,21 +3,22 @@
 window.addEventListener('load', () => {
 
     // grab difficulty from storage and set global variable
-    chrome.storage.sync.get({dividers:3}, (data) =>{
+    chrome.storage.sync.get({ dividers: 3 }, (data) => {
         dividers = data.dividers
+        solvedSequence = buildSolvedSequence(dividers)
 
 
-    document.querySelectorAll('img, canvas')?.forEach(handleElement)
-    observeForNewImages()
-    detectMovement() // call detect movement
-    }) 
+        document.querySelectorAll('img, canvas')?.forEach(handleElement)
+        observeForNewImages()
+        detectMovement() // call detect movement
+    })
 
 });
 
 // puzzle tracker
 var activePuzzle = null // tracks which puzzle is currently active
 var dividers = 2
-puzzleStartTime = null 
+puzzleStartTime = null
 
 // set to the clicked puzzle's data when a puzzle is clicked
 var grid = []
@@ -27,13 +28,15 @@ var tileEls = []
 
 // precomputed solved sequence
 // immediately invoked function expression: function() {...}() returns a value and assign it to a variable in one go 
-var solvedSequence = (function () {
+var solvedSequence = buildSolvedSequence(dividers)
+
+function buildSolvedSequence(size) {
     const seq = []
-    for (var i = 0; i < dividers; i++) {
+    for (var i = 0; i < size; i++) {
         seq.push([])
-        for (var j = 0; j < dividers; j++) {
-            const flatIndex = i * dividers + j
-            const isLastCell = flatIndex === dividers * dividers - 1 // grab the last cell based on the dividers
+        for (var j = 0; j < size; j++) {
+            const flatIndex = i * size + j
+            const isLastCell = flatIndex === size * size - 1 // grab the last cell based on the size
             if (isLastCell) {
                 seq[i].push(0)
             }
@@ -43,7 +46,7 @@ var solvedSequence = (function () {
         }
     }
     return seq // the precomputed sequence
-})()
+}
 
 
 
@@ -176,7 +179,7 @@ function setUpPuzzle(element) {
             tile.style.backgroundPosition = `-${xOffset}px -${yOffset}px`
 
             tile.style.border = '1px solid black'
-            
+
             // if it is the last tile 
             if (i === dividers - 1 && j === dividers - 1) {
                 tile.style.backgroundImage = 'None'
@@ -339,7 +342,7 @@ function applyMove(move, localGrid, localTileEls, localEmptyPos, checkforWin) {
         localTileEls.forEach(tile => tile.style.border = 'none')
 
         // make last image become normal
-        const emptyTile = localTileEls[dividers * dividers -1]
+        const emptyTile = localTileEls[dividers * dividers - 1]
         emptyTile.style.backgroundImage = `url(${emptyTile.dataset.imageLink})`
         emptyTile.style.backgroundSize = `${emptyTile.dataset.imageWidth}px ${emptyTile.dataset.imageHeight}px`
         emptyTile.style.backgroundColor = ''
@@ -347,7 +350,7 @@ function applyMove(move, localGrid, localTileEls, localEmptyPos, checkforWin) {
 
         // fire the confetti
         party.confetti(document.body, {
-            count: party.variation.range(200,300)
+            count: party.variation.range(200, 300)
         })
 
         // stats 
@@ -364,7 +367,7 @@ function applyMove(move, localGrid, localTileEls, localEmptyPos, checkforWin) {
             const newTotalTime = data.totalTime + timeTaken
             chrome.storage.sync.set({ totalTime: newTotalTime })
         })
-    
+
     }
 }
 
