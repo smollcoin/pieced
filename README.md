@@ -4,7 +4,7 @@ Pieced is a Chrome extension that turns images on a webpage into sliding puzzles
 
 ## Demo Website
 
-Open the demo site here: [docs/demo.html](docs/demo.html)
+Open the demo site here: https://smollcoin.github.io/pieced/ 
 
 ## Demo Video
 
