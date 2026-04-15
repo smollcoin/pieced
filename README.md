@@ -21,4 +21,3 @@ Pieced replaces images with interactive sliding puzzles and tracks your progress
 3. Browse a page with images.
 4. Click an image to activate the puzzle.
 5. Use the arrow keys to move the tiles until the image is solved.
-
