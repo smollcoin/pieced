@@ -122,6 +122,7 @@ body {
     padding-bottom: 4em;
     text-align: center;
     box-shadow: 4px 4px 4px rgb(201, 201, 201);
+    
 }
 
 .cta-text {
@@ -161,4 +162,49 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+body{
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.08;
+    
+    background-image:
+    url("./logo_128.png");
+
+  background-repeat:
+    repeat;
+  background-size:
+    90px 90px;
+
+}
+
+@keyframes slideIn{
+    from{
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+.main-image, .video-demo-container, .cta-container {
+    opacity:0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-name: slideIn;
+}
+
+.video-demo-container{
+    animation-delay: 400ms
 }

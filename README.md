@@ -14,6 +14,13 @@ Watch the demo video: https://www.youtube.com/watch?v=ToKZ0lYNZxc
 
 Pieced replaces images with interactive sliding puzzles and tracks your progress. You can choose Easy, Medium, or Hard in the extension popup, then solve puzzles directly on the page.
 
+## How to set up
+1. Downlaod the zip file from the releases page:
+https://github.com/smollcoin/pieced/releases/tag/v1.0.0
+2. Unzip the file and open Chrome.
+3. Go to `chrome://extensions/` and enable "Developer mode" in the top right corner.
+4. Click "Load unpacked" and select the unzipped folder.
+
 ## How To Play
 
 1. Open the Pieced extension popup.
